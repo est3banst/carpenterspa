@@ -10,14 +10,16 @@ export default function Nav () {
                 alt=''
             />
             </span>
-            <h1 className='header-title'>CARPINTERIA MARTINEZ</h1>
+            <h1 className='header-title'>CARPINTERIA MARTINEZ </h1>
+            
+           
+           <section className='sect-sidenav'>
            <div className='cont-menu-mobile'>
            <span id='menu-resp' class="material-symbols-outlined">
             menu
             </span>
            </div>
-           <section className='sect-sidenav'>
-                <ul>
+                <ul className='sidenav-ul'>
                     <a href=''>
                     <li>Inicio</li>
                     <span className="material-symbols-outlined">
@@ -73,9 +75,8 @@ export default function Nav () {
             </ul>
             </nav>
             <div className='hr-container'>
-              
+            
             </div>
-
         </header>
     )
 }
