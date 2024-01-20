@@ -1,4 +1,6 @@
-import Nav from './componentes/Nav'
+import Nav from './componentes/Nav';
+import Hero from './componentes/Hero';
+import Articles from './componentes/Articles';
 
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
   return (
     <>
      <Nav/>
+     <Hero/>
+     <Articles/>
     </>
   )
 }
