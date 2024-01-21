@@ -229,13 +229,17 @@ a {
         margin-bottom: 3.559rem;
     }
     .call-icon, .wp-icon {
-        padding: 0rem;
+        padding: .3rem, .6rem;
         margin-right:0;
         width: 25px;
     }
     .contact-today-icon {
         width: 120px;
-        justify-content: flex-end;
+        justify-content: center;
+
+    }
+    #menu-resp {
+        margin-right: 0;
     }
     
 }

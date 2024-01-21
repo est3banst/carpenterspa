@@ -12,15 +12,30 @@ export default function Articles () {
                  <p className='par-about-gar'>Nuestros trabajos tienen una garantía de hasta 10 años</p>
             </article>
             <section className='icons-about'>
-            <span id='about-icons' class="material-symbols-outlined">
+            <div className='container-icons'>
+            <span id='about-icons' className='material-symbols-outlined'>
             recycling
             </span>
-            <span id='about-icons' class="material-symbols-outlined">
+            <p className='icons-text'>
+                Materiales naturales, altamente reciclables
+            </p>
+            </div>
+            <div className='container-icons'>
+            <span id='about-icons' className='material-symbols-outlined'>
             savings
             </span>
-            <span id='about-icons' class="material-symbols-outlined">
+            <p className='icons-text'>
+                Muebles que lucen sin mantenimiento, cuidando tu economía
+            </p>
+            </div>
+            <div className='container-icons'>
+            <span id='about-icons' className='material-symbols-outlined'>
             hourglass_empty
             </span>
+            <p className='icons-text'>
+                Materiales de alta cálidad se traducen en muebles de alta vida útil
+            </p>
+            </div>
             </section>
         </div>
     )

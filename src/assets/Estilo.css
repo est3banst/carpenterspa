@@ -42,6 +42,21 @@
     .container-about {
         margin-top: 7rem;
     }
+    .icons-about {
+        flex-direction: column;
+    }
+    .container-icons {
+        width: 100%;
+        text-align: center;
+    }
+    #about-icons {
+        font-size: 6rem;
+    }
+    .icons-text {
+        max-width: 330px;
+        text-align: center;
+        margin: auto;
+    }
     
 }
 @media screen and (width < 860px){
