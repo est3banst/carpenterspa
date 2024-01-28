@@ -5,7 +5,7 @@
     background-color: rgba(188, 178, 165, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 6px;
-    position: absolute;
+    /* position: absolute; */
     margin-top: 6rem;
     height: auto;
 }

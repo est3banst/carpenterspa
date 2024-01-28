@@ -1,0 +1,37 @@
+.container-works {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.para-works {
+    text-align: left;
+}
+.works-images {
+    max-width: 300px;
+    width: 440px;
+    max-height: 350px;
+    height: auto;
+}
+.section-works {
+    display: block;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.email-now {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid #ccc;
+}
+.email-icon {
+    width: 120px;
+    height: 140px;
+    color: #458147;
+}
+.section-p {
+    color: #be464e;
+}
