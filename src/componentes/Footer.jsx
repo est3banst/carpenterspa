@@ -27,7 +27,7 @@ export default function Footer () {
     return (
         <>
         <div className="container-footer">
-            <section className='social-icons'>
+        <footer>
                 <svg className='social-face' width="24" height="24" viewBox="0 0 24 24"
                     strokeWidth="2" stroke="currentColor" fill="none"
                     strokeLinecap="round" strokeLinejoin="round">
@@ -44,10 +44,11 @@ export default function Footer () {
                     <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                     <path d="M16.5 7.5l0 .01" />
                 </svg>
-                </section>
-        </div>
-        <footer>
+           
+        
+       
             <h3 className='footer-brand'>CARPINTERIA MARTINEZ</h3>
+            <small>2024</small>
 
             {showBttn && (
                 <button className='footer-button' onClick={scrollToTop}>
@@ -59,6 +60,7 @@ export default function Footer () {
                 </button>
             )}
         </footer>
+        </div>
         </>
     )
 };

@@ -264,3 +264,18 @@ a {
     }
     
 }
+.cont-whatsapp {
+    position: fixed;
+    top: 70%;
+    right: 18%;
+}
+
+.whats-icon {
+    position:sticky;
+    background-color: #25d366;
+    color: #fff;
+    padding: .4rem 0;
+    border-radius: 50%;
+    width: 70px;
+    height: 50px;
+}

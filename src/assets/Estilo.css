@@ -37,6 +37,8 @@
 }
 #about-icons {
     font-size: 4rem;
+    width: 100%;
+    text-align: center;
 }
 @media screen and (width < 1000px){
     .container-about {
