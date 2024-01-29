@@ -1,0 +1,65 @@
+.hero-container {
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    /* position: absolute; */
+    
+}
+
+.hero-imgone {
+    position: relative;
+    z-index: -1;
+    height: auto;
+    max-height: 750px;
+    padding: 1.5rem 0;
+    border-radius: 20%;
+    width: 60%;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.hero-imgtwo {
+    left: 45%;
+    height: auto;
+    max-height: 750px;
+    padding: 1.5rem 0;
+    border-radius: 20%;
+    z-index: -1;
+    
+    mix-blend-mode: multiply;
+    width: 50%;
+    position: absolute;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.hero-button {
+    display: flex;
+    width: auto;
+    padding: .8rem 1.3rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 70%;
+    z-index: -1;
+    margin: auto;
+    font-family: 'JetBrains Mono';
+    font-size: 1.3rem;
+    height: auto;
+    -webkit-box-shadow: 7.5px 8.5px 10px 6px #2c2c2c;
+    -moz-box-shadow: 7.5px 8.5px 10px 6px #2c2c2c;
+    box-shadow: 7.5px 8.5px 5px 2px #2c2c2c;
+}
+
+@media screen and (width < 750px) { 
+    .hero-button  {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (width < 500px){ 
+    .hero-container {
+        max-height: 800px;
+    }
+    .hero-button  {
+        padding: .8rem 1.6rem;
+        font-size: 1.4rem;
+        margin-bottom: 3.559rem;
+    }
+}

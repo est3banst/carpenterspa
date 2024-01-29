@@ -1,4 +1,4 @@
-import '../assets/App.css'
+import '../assets/Hero.css'
 export default function Hero () {
     return (
       <main>

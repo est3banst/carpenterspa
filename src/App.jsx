@@ -11,7 +11,7 @@ function App() {
     <>
      
      <Nav/>
-     <div className='whatsapp-div'>
+     <a className='whatsapp-div' target='_blank' href="https://wa.me/+59898775976?text=Estoy%20interesado%20en%20un%20presupuesto%20para%20..">
      <span className='cont-whatsapp'>
             <svg className='whats-icon' width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" 
             stroke="currentColor" fill="none" strokeLinecap="round" 
@@ -21,7 +21,7 @@ function App() {
              .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
              </svg>
             </span>
-     </div>
+     </a>
      <Hero/>
      <Articles/>
      <Works/>

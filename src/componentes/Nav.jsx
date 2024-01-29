@@ -6,6 +6,7 @@ import '../assets/App.css'
 export default function Nav () {
 
     const [isSideNav, setSideNav] = useState(false);
+    const menuResp = isSideNav ? 'open' : '';
     const sideNavUlClass = isSideNav ? 'sidenav-ul-visible' : 'sidenav-ul'
     const settingSideNav = () => {
         setSideNav(!isSideNav);
@@ -47,9 +48,15 @@ export default function Nav () {
            <h1 className='header-title'>CARPINTERIA MARTINEZ </h1>
             
             <span className='contact-today-icon'> 
-            <span id='menu-resp' onClick={settingSideNav} className="material-symbols-outlined">
-            menu
-            </span>
+            <div id='menu-resp' className={menuResp} onClick={settingSideNav}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <a className='call-icon' href="tel://+59898775976">
             <svg  width="24" height="24" viewBox="0 0 24 24" 
                 strokeWidth="2" stroke="currentColor" fill="none" 
@@ -62,17 +69,6 @@ export default function Nav () {
             </svg>
             </a>
            
-            <a className='wp-icon' href="https://wa.me/+59898775976?text=Estoy%20interesado%20en%20un%20presupuesto%20para%20..">
-
-            <svg  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2"
-                stroke="currentColor" fill="none" strokeLinecap="round" 
-                strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z"
-                fill="none"/>
-                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05.9" />
-                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1
-                0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-            </svg>
-            </a>
             </span>
             <nav>
             <ul className='hr-li-container'>
