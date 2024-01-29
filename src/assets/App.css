@@ -55,6 +55,7 @@ a {
     height: 45px;
     position: relative;
     margin: 10px auto;
+    top: 5px;
     display: none;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -173,9 +174,9 @@ a {
         padding: .3rem .6rem;
     }
     
-    .call-icon, .wp-icon {
+    .call-icon {
         display: block;
-        width: 35px;
+        width: 40px;
         border-radius: 6px;
         padding: .3rem .6rem;
         height: auto;
@@ -242,7 +243,11 @@ a {
 
 @media screen and (width < 750px) {
     h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+    .hr-title {
+        display: flex;
+        flex-direction: column;
     }
     .sect-sidenav {
         display: flex;
@@ -255,26 +260,33 @@ a {
         height: 700px;
 
     }
-    .sect-sidenav
+    .small-header {
+        font-size: calc(1.3rem / 1.6809);
+        text-align: center;
+    }
     
 }
 @media screen and (width < 500px){
     h1 {
-        font-size: .8rem;
+        font-size: 1.2rem;
         padding: 0 8px;
         text-align: center;
         margin: 0 auto;
     }
   
-    .call-icon, .wp-icon {
+    .call-icon {
         padding: .3rem, .6rem;
         margin-right:0;
-        width: 25px;
+        width: 40px;
     }
     .contact-today-icon {
         width: 120px;
         justify-content: center;
 
+    }
+    .small-header {
+        font-size: calc(1rem / 1.6809);
+        text-align: center;
     }
     #menu-resp {
         margin-right: 0;

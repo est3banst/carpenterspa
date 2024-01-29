@@ -45,8 +45,10 @@ export default function Nav () {
            </section>
          
            <div className="hr-container">
-           <h1 className='header-title'>CARPINTERIA MARTINEZ </h1>
-            
+          <div className="hr-title">
+          <h1 className='header-title'>CARPINTERIA MARTINEZ </h1>
+            <small className='small-header'>Creando espacios de inspiración</small>
+          </div>
             <span className='contact-today-icon'> 
             <div id='menu-resp' className={menuResp} onClick={settingSideNav}>
                 <span></span>
