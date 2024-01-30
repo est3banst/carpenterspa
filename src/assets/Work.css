@@ -6,32 +6,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .para-works {
     text-align: left;
     padding: 4px;
 }
 
-.section-works {
-    display: block;
-    text-align: center;
-    border: 1px solid #ccc;
-}
-.email-now {
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    display: block;
-    border-bottom: 3px solid #ccc;
-}
-.email-icon {
-    width: 120px;
-    height: 140px;
-    color: #458147;
-}
-.section-p {
-    color: #be464e;
-}
 ul {
     list-style: none;
 }

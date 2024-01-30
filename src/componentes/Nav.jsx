@@ -11,31 +11,32 @@ export default function Nav () {
     const settingSideNav = () => {
         setSideNav(!isSideNav);
     }
+    
     return (
         <header className='header-comp'>
             
            <section className='sect-sidenav'>
           
                 <ul className={sideNavUlClass}>
-                    <a className='sidenav-a' href=''>
+                    <a className='sidenav-a' href='#'>
                     <li className='sidenav-li'>INICIO</li>
                     <span className="material-symbols-outlined">
                     home
                     </span>
                     </a>
-                    <a className='sidenav-a' href=''>
+                    <a className='sidenav-a' href='#trabajos'>
                     <li className='sidenav-li'>TRABAJOS</li>
                     <span className="material-symbols-outlined">
                     carpenter
                     </span>
                     </a>
-                    <a className='sidenav-a' href=''>
+                    <a className='sidenav-a' href='#about'>
                     <li className='sidenav-li'>NOSOTROS</li>
                     <span className="material-symbols-outlined">
                     person
                     </span>
                     </a>
-                    <a className='sidenav-a' href=''>
+                    <a className='sidenav-a' href='#contact'>
                     <li className='sidenav-li'>CONTACTO</li>
                     <span className="material-symbols-outlined">
                     phone_callback

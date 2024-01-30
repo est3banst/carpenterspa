@@ -2,7 +2,7 @@ import '../assets/Estilo.css'
 
 export default function Articles () {
     return (
-        <div className='container-about'>
+        <div id='about' className='container-about'>
             <h2 className='header-about'>Nosotros</h2>
             <article>
             <p className='par-about'>Diseño y ensamblaje de mobiliario tradicional</p>
@@ -33,7 +33,7 @@ export default function Articles () {
             hourglass_empty
             </span>
             <p className='icons-text'>
-                Materiales de alta cálidad se traducen en muebles de alta vida útil
+                Materiales de alta calidad se traducen en muebles de larga vida útil
             </p>
             </div>
             </section>

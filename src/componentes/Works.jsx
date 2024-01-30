@@ -13,20 +13,20 @@ export default function Works() {
 
     return (
         <>
-            <div className='container-works'>
+            <div id='trabajos' className='container-works'>
                 <h2 className='works-heading'>Estos son algunos de nuestros trabajos</h2>
                 <p className='para-works'>Cada proyecto se concibe en el diálogo con nuestros clientes al
                     interpretar correctamente la necesidad y trabajar correctamente con los espacios.</p>
                 <section className='works-ul'>
                 <ul>
                     <li>
-                        <img className={modalOpen} src='/imgs/esquinatvrack.jpg' alt='Aparador de TV esquinero de madera' />
-                        <figcaption>Rack TV esquinero terminación caoba</figcaption>
+                        <img className={modalOpen} src='/imgs/placard5pbl.jpeg' alt='Aparador de TV esquinero de madera' />
+                        <figcaption>Placard 5 Puertas con modular superior ,8 estantes. Herrajes : con freno, telescópicas y con resorte</figcaption>
                   
                     </li>
                    <li>
-                        <img className={modalOpen} src='/imgs/cocinacomp.jpg' alt='Modulos de cocina, bajo mesada y aéreos' />
-                        <figcaption>Modulos de cocina aéreo y bajo mesada, azul laqueado</figcaption>
+                        <img className={modalOpen} src='/imgs/placard6pne.jpeg' alt='Modulos de cocina, bajo mesada y aéreos' />
+                        <figcaption>Placard 6 puertas con modular superior, 3 estantes. Herrajes : con freno, telescópicas y con resorte</figcaption>
                   
                    </li>
                     <li>
@@ -52,21 +52,6 @@ export default function Works() {
                 </ul>
                 </section>
             </div>
-
-            <section className="section-works">
-
-                <a className='email-now' href="mailto:estebeeen@outlook.com">
-                    <svg className='email-icon' width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"
-                        fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z"
-                            fill="none" /><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
-                        <path d="M3 6l9 6l9 -6" /><path d="M15 18h6" /><path d="M18 15l3 3l-3 3" /></svg>
-                </a>
-                <h2 className='works-heading'>
-                    Email
-                </h2>
-                <p className='section-par'>Puedes solicitar un presupuesto, o coordinar una visita</p>
-                <p className='section-p'>Envíanos un mail</p>
-            </section>
         </>
     )
 }

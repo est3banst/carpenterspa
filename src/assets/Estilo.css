@@ -2,8 +2,8 @@
     width: 100%;
     background-image: repeating-linear-gradient(0deg, #f1f1f1, #f1f1f1 1.5px, transparent 1.5px, transparent);
     background-size: 100px 100px;
-    background-color: rgba(188, 178, 165, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(188, 178, 165, 0.5); 
+    /* backdrop-filter: blur(10px); */
     border-radius: 6px;
     /* position: absolute; */
     margin-top: 6rem;
