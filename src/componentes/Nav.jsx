@@ -11,40 +11,11 @@ export default function Nav () {
     const settingSideNav = () => {
         setSideNav(!isSideNav);
     }
-    
+   
     return (
+        <>
         <header className='header-comp'>
             
-           <section className='sect-sidenav'>
-          
-                <ul className={sideNavUlClass}>
-                    <a className='sidenav-a' href='#'>
-                    <li className='sidenav-li'>INICIO</li>
-                    <span className="material-symbols-outlined">
-                    home
-                    </span>
-                    </a>
-                    <a className='sidenav-a' href='#trabajos'>
-                    <li className='sidenav-li'>TRABAJOS</li>
-                    <span className="material-symbols-outlined">
-                    carpenter
-                    </span>
-                    </a>
-                    <a className='sidenav-a' href='#about'>
-                    <li className='sidenav-li'>NOSOTROS</li>
-                    <span className="material-symbols-outlined">
-                    person
-                    </span>
-                    </a>
-                    <a className='sidenav-a' href='#contact'>
-                    <li className='sidenav-li'>CONTACTO</li>
-                    <span className="material-symbols-outlined">
-                    phone_callback
-                    </span>
-                    </a>
-                </ul>
-           </section>
-         
            <div className="hr-container">
           <div className="hr-title">
           <h1 className='header-title'>CARPINTERIA MARTINEZ </h1>
@@ -114,6 +85,37 @@ export default function Nav () {
             />
             </span>
            
+           
         </header>
+         <section>
+          
+         <ul className={sideNavUlClass}>
+             <a className='sidenav-a' href='#' onClick={settingSideNav}>
+             <li className='sidenav-li'>INICIO</li>
+             <span className="material-symbols-outlined">
+             home
+             </span>
+             </a>
+             <a className='sidenav-a' href='#trabajos' onClick={settingSideNav}>
+             <li className='sidenav-li'>TRABAJOS</li>
+             <span className="material-symbols-outlined">
+             carpenter
+             </span>
+             </a>
+             <a className='sidenav-a' href='#about' onClick={settingSideNav}>
+             <li className='sidenav-li'>NOSOTROS</li>
+             <span className="material-symbols-outlined">
+             person
+             </span>
+             </a>
+             <a className='sidenav-a' href='#contact' onClick={settingSideNav}>
+             <li className='sidenav-li'>CONTACTO</li>
+             <span className="material-symbols-outlined">
+             phone_callback
+             </span>
+             </a>
+         </ul>
+    </section>
+    </>
     )
 }
