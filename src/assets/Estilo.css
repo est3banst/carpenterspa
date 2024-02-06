@@ -25,6 +25,9 @@
     font-weight: 600;
     font-style: italic;
 }
+.par-about {
+    font-weight: 400;
+}
 .par-about-gar {
     text-decoration: underline;
 }

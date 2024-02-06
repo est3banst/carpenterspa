@@ -52,19 +52,20 @@ export default function Nav () {
                     </span>
                     <li className='hr-li'>Inicio</li>
                     </a>
-                    <a className='ul-nav-a' href="">
-                    <span className="material-symbols-outlined">
-                    carpenter
-                    </span>
-                    <li className='hr-li'>Trabajos</li>
-                    </a>
-                    <a className='ul-nav-a' href="">
+                    <a className='ul-nav-a' href="#about">
                     <span className="material-symbols-outlined">
                     person
                     </span>
                     <li className='hr-li'>Nosotros</li>
                     </a>
-                    <a className='ul-nav-a' href="">
+                    <a className='ul-nav-a' href="#trabajos">
+                    <span className="material-symbols-outlined">
+                    carpenter
+                    </span>
+                    <li className='hr-li'>Trabajos</li>
+                    </a>
+                    
+                    <a className='ul-nav-a' href="#contact">
                     <span className="material-symbols-outlined">
                     phone_callback
                     </span>
@@ -87,8 +88,7 @@ export default function Nav () {
            
            
         </header>
-         <section>
-          
+        
          <ul className={sideNavUlClass}>
              <a className='sidenav-a' href='#' onClick={settingSideNav}>
              <li className='sidenav-li'>INICIO</li>
@@ -96,16 +96,16 @@ export default function Nav () {
              home
              </span>
              </a>
-             <a className='sidenav-a' href='#trabajos' onClick={settingSideNav}>
-             <li className='sidenav-li'>TRABAJOS</li>
-             <span className="material-symbols-outlined">
-             carpenter
-             </span>
-             </a>
              <a className='sidenav-a' href='#about' onClick={settingSideNav}>
              <li className='sidenav-li'>NOSOTROS</li>
              <span className="material-symbols-outlined">
              person
+             </span>
+             </a>
+             <a className='sidenav-a' href='#trabajos' onClick={settingSideNav}>
+             <li className='sidenav-li'>TRABAJOS</li>
+             <span className="material-symbols-outlined">
+             carpenter
              </span>
              </a>
              <a className='sidenav-a' href='#contact' onClick={settingSideNav}>
@@ -115,7 +115,6 @@ export default function Nav () {
              </span>
              </a>
          </ul>
-    </section>
     </>
     )
 }
