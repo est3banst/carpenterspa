@@ -215,6 +215,7 @@ a {
     }
     ul {
         padding: 0;
+        list-style-type: none;
     }
     .sidenav-ul-visible {
         position: fixed;

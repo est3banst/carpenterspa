@@ -47,6 +47,9 @@ footer {
     }
     
 }
+ul {
+    list-style-type: none;
+}
 .ul-footer {
     display: flex;
     justify-content: center;
