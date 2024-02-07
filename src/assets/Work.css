@@ -61,3 +61,10 @@
     color: #fff;
     z-index: 665;
 }
+@media only screen and (width < 560px) {
+    .container-choice {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+}
