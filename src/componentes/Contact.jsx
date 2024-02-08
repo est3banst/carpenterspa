@@ -23,7 +23,7 @@ export default function Contact () {
             <path d="M15 7a2 2 0 0 1 2 2" /><path d="M15 3a6 6 0 0 1 6 6" /></svg>
         </a>    
             <h2>Llámanos</h2>
-            <p className='section-par'>Podés llamarnos dentro de nuestros horarios de atención y conversar tu siguiente proyecto</p>
+            <p className='section-par'>Podés llamarnos y conversar tu siguiente proyecto</p>
             <p className='section-p'>Horario de atención: Lunes a Viernes 7:30 a 18:00</p>
         
     </section>

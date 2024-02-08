@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import {kitchenImages, bedroomImages} from '../componentes/pictures'
 
@@ -9,7 +9,18 @@ import '../assets/Gallery.css'
 
 export default function Works() {
 
-    const [activeImg, setActiveImg] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % kitchenImages.length);
+      };
+    
+      const prevSlide = () => {
+        setCurrentIndex(
+          (prevIndex) => (prevIndex - 1 + kitchenImages.length) % kitchenImages.length
+        );
+      };
+
 
     const [choiceone, setChoice] = useState(false);
     const [choicetwo, setSecondChoice] = useState(false);
@@ -81,11 +92,10 @@ export default function Works() {
             <section className='kitchen-works-section'>
             
                 
-                {kitchenImages.map((image, activeImg) => {
+                {kitchenImages.map((image) => {
                     return (
-                            <div className='container-img-kitchens' key={activeImg}>
+                            <div className='container-img-kitchens' key={image.id} >
                               
-                            
                                     <img className='img-kitchens' src={image.imgSrc} alt="" />
                             <svg className='toclose-icon' 
                                 onClick={openModal} 
@@ -112,7 +122,8 @@ export default function Works() {
                                 stroke="currentColor" 
                                 fill="none" 
                                 strokeLinecap="round" 
-                                strokeLinejoin="round">
+                                strokeLinejoin="round"
+                                >
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M15 6l-6 6l6 6" />
                                 
@@ -125,12 +136,12 @@ export default function Works() {
                                 stroke="currentColor" 
                                 fill="none" 
                                 strokeLinecap="round" 
-                                strokeLinejoin="round">
+                                strokeLinejoin="round"
+                                >
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M9 6l6 6l-6 6" />
                             </svg>
                             </span>
-                                
                             </div>
                     )
                 })}
