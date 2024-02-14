@@ -1,39 +1,59 @@
-import { useEffect, useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import {kitchenImages, bedroomImages} from './pictures'
 
-import {kitchenImages, bedroomImages} from '../componentes/pictures'
 
-import '../assets/Work.css'
 import '../assets/Gallery.css'
+import '../assets/Work.css'
 
 
 
-export default function Works() {
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % kitchenImages.length);
-      };
-    
-      const prevSlide = () => {
-        setCurrentIndex(
-          (prevIndex) => (prevIndex - 1 + kitchenImages.length) % kitchenImages.length
-        );
-      };
-
+const Works = () => {
 
     const [choiceone, setChoice] = useState(false);
     const [choicetwo, setSecondChoice] = useState(false);
 
-    const openModal = () => {
-        setChoice(!choiceone)
-    }
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const sectionRef = useRef();
 
-    const openSecondModal = () => {
-        setSecondChoice(!choicetwo)
-    }
-    const isChoiceOnScreen = choiceone || choicetwo? 'container-hidden' : 'container-choice';
+    useEffect(() => {
+        const sectionNode = sectionRef.current;
+        const imgNodes = sectionNode.querySelectorAll("li > img")[currentIndex];
+        console.log(imgNodes)
+        if (imgNodes) {
+            imgNodes.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'start',
+            });
+        }
+    },[currentIndex])
 
+    const scrollToImage = (direction) => {
+        if (direction === 'prev') {
+            setCurrentIndex(curr => {
+                const isFirstImg = currentIndex === 0;
+                return isFirstImg ? 0 : curr - 1;
+            })
+        } else {
+            const isLastImg = currentIndex === kitchenImages.length -1;
+            if (!isLastImg) {
+                setCurrentIndex(curr => curr + 1);
+            }
+        }
+    }
+  
+
+    const openModal = (index) => {
+        setCurrentIndex(index);
+        const modal = document.getElementById('myModal');
+        modal.style.visibility = 'visible';
+      };
+    
+      const closeModal = () => {
+        const modal = document.getElementById('myModal');
+        modal.style.visibility = 'hidden';
+      };
     
     return (
         <>
@@ -43,7 +63,7 @@ export default function Works() {
                     interpretar correctamente la necesidad y trabajar correctamente con los espacios.</p>
               
             </section>
-            <div className={isChoiceOnScreen}>
+            <div className='container-choice'>
            
             <section className='container-choice'>
                 <button onClick={openModal}>
@@ -67,7 +87,7 @@ export default function Works() {
                 <img src="/imgs/cocina/kitchenchoice.jpg" alt="" />
             </section>
             <section className='container-choice'>
-                <button onClick={openSecondModal}> 
+                <button> 
                 <svg className='choice-selection' 
                     width="24" 
                     height="24" 
@@ -88,119 +108,71 @@ export default function Works() {
                 <img src="/imgs/dormitorio/armarioschoice.jpg" alt="" />
             </section>
             </div>
-            {choiceone && <div id='trabajos' className='container-kitchen-works'>
-            <section className='kitchen-works-section'>
-            
-                
-                {kitchenImages.map((image) => {
-                    return (
-                            <div className='container-img-kitchens' key={image.id} >
-                              
-                                    <img className='img-kitchens' src={image.imgSrc} alt="" />
-                            <svg className='toclose-icon' 
-                                onClick={openModal} 
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2" 
-                                stroke="currentColor" 
-                                fill="none" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round">
-                                <path stroke="none" 
-                                d="M0 0h24v24H0z" 
-                                fill="none"/>
-                                <path d="M18 6l-12 12" />
-                                <path d="M6 6l12 12" />
-                            </svg>
-                            <span className='image-control'>
-                            <svg className='arrow-left' 
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2"
-                                stroke="currentColor" 
-                                fill="none" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round"
-                                >
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M15 6l-6 6l6 6" />
-                                
-                            </svg>
-                            <svg className='arrow-right'
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2" 
-                                stroke="currentColor" 
-                                fill="none" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round"
-                                >
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M9 6l6 6l-6 6" />
-                            </svg>
-                            </span>
-                            </div>
-                    )
-                })}
-                
-                
-                </section>
-                </div>
-            }
-            {choicetwo && <div id='trabajos' className='container-kitchen-works'>
-            <section className='kitchen-works-section'>
-            
-                
-                {bedroomImages.map((image, index) => {
-                    return (
-                            <div className='container-img-kitchens' key={index}>
-                            <img className='img-kitchens' src={image.imgSrc} alt="" />
-                            <svg className='toclose-icon' 
-                                onClick={openSecondModal} 
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2" 
-                                stroke="currentColor" fill="none" 
-                                strokeLinecap="round" 
-                                strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M18 6l-12 12" /><path d="M6 6l12 12" />
-                            </svg>
-                            <span className='image-control'>
-                            <svg className='arrow-left' 
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2"
-                                stroke="currentColor" fill="none" strokeLinecap="round" 
-                                strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M15 6l-6 6l6 6" />
-                            </svg>
-                            <svg className='arrow-right' 
-                                width="24" 
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                strokeWidth="2" 
-                                stroke="currentColor" fill="none" strokeLinecap="round" 
-                                strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M9 6l6 6l-6 6" />
-                            </svg>
-                </span>
-                            </div>
-                    )
-                })}
-                
-                
-                </section>
-                </div>
-            }
-            
+           
+            <div id="myModal" className="modal" onClick={closeModal}>
+        <div id="trabajos" className="container-kitchen-works" onClick={(e) => e.stopPropagation()}>
+        <ul ref={sectionRef} className="kitchen-works-section">
+          {kitchenImages.map((image, index) => (
+            <li className="container-img-kitchens" key={image.id}>
+              <img
+                className="img-kitchens"
+                src={image.imgSrc}
+                alt=""
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+          <span className="close-btn" onClick={closeModal}>
+          <svg className='toclose-icon' 
+                    onClick={openModal} 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    stroke="currentColor" 
+                    fill="none" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round">
+                    <path stroke="none" 
+                    d="M0 0h24v24H0z" 
+                    fill="none"/>
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+          </span>
+          <div className="image-control-modal">
+            <svg
+              className="arrow-left"
+              onClick={() => scrollToImage('prev')}
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 6l-6 6l6 6" />
+            </svg>
+            <svg
+              className="arrow-right"
+              onClick={() => scrollToImage('next')}
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6l6 6l-6 6" />
+            </svg>
+          </div>
+       
+      </div>
+
         </>
     )
 }
+export default Works
