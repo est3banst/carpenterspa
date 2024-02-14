@@ -59,9 +59,16 @@
     border-radius: 8px;
 }
 
+@media only screen and (1024px > width) {
+    .modal img {
+        margin: 4rem auto;
+    }
+}
+
+
 .image-control-modal {
+
     width: 80px;
-    
     position: relative;
     height: 80px;
     padding: 10px;

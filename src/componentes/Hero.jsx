@@ -11,7 +11,7 @@ export default function Hero () {
         src='/bathdoor.jpg' 
         alt='' 
         className='hero-imgtwo' />
-        <a href="https://wa.me/+59898414718?text=Hola,%20estoy%20interesado%20en%20un%20presupuesto%20para%20.." target="_blank" className="whatsapp-now">
+        <a href="https://wa.me/+59898775976?text=Hola,%20estoy%20interesado%20en%20un%20presupuesto%20para%20.." target="_blank" className="whatsapp-now">
         <button className='hero-button'>
           Cotizá hoy mismo tu siguiente proyecto 
           <svg width="24" 
