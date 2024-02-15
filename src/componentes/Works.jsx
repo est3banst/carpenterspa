@@ -10,24 +10,20 @@ import '../assets/Work.css'
 
 const Works = () => {
 
-    const [choiceone, setChoice] = useState(false);
-    const [choicetwo, setSecondChoice] = useState(false);
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const sectionRef = useRef();
+ 
 
     useEffect(() => {
         const sectionNode = sectionRef.current;
         const imgNodes = sectionNode.querySelectorAll("li > img")[currentIndex];
-        console.log(imgNodes)
+        
         if (imgNodes) {
             imgNodes.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'start',
+                behavior: 'smooth'
             });
         }
-    },[currentIndex])
+    },[currentIndex]);
 
     const scrollToImage = (direction) => {
         if (direction === 'prev') {
@@ -44,8 +40,7 @@ const Works = () => {
     }
   
 
-    const openModal = (index) => {
-        setCurrentIndex(index);
+    const openModal = () => {
         const modal = document.getElementById('myModal');
         modal.style.visibility = 'visible';
       };
@@ -54,7 +49,18 @@ const Works = () => {
         const modal = document.getElementById('myModal');
         modal.style.visibility = 'hidden';
       };
+      const openSecondModal = () => {
+        const modal = document.getElementById('secondModal');
+        modal.style.visibility = 'visible';
+      };
     
+      const closeSecondModal = () => {
+        const modal = document.getElementById('secondModal');
+        modal.style.visibility = 'hidden';
+      };
+    
+
+
     return (
         <>
             <section className='container-works'>
@@ -87,7 +93,7 @@ const Works = () => {
                 <img src="/imgs/cocina/kitchenchoice.jpg" alt="" />
             </section>
             <section className='container-choice'>
-                <button> 
+                <button onClick={openSecondModal}> 
                 <svg className='choice-selection' 
                     width="24" 
                     height="24" 
@@ -109,10 +115,11 @@ const Works = () => {
             </section>
             </div>
            
-            <div id="myModal" className="modal" onClick={closeModal}>
-        <div id="trabajos" className="container-kitchen-works" onClick={(e) => e.stopPropagation()}>
+            <div id="myModal" className="modal">
+            <div className="container-kitchen-works">
         <ul ref={sectionRef} className="kitchen-works-section">
-          {kitchenImages.map((image, index) => (
+          {kitchenImages.map((image) => (
+                
             <li className="container-img-kitchens" key={image.id}>
               <img
                 className="img-kitchens"
@@ -123,9 +130,10 @@ const Works = () => {
           ))}
         </ul>
       </div>
+       
           <span className="close-btn" onClick={closeModal}>
           <svg className='toclose-icon' 
-                    onClick={openModal} 
+                     
                     width="24" 
                     height="24" 
                     viewBox="0 0 24 24" 
@@ -144,8 +152,8 @@ const Works = () => {
           <div className="image-control-modal">
             <svg
               className="arrow-left"
-              onClick={() => scrollToImage('prev')}
               viewBox="0 0 24 24"
+              onClick={() => scrollToImage('prev')}
               strokeWidth="2"
               stroke="currentColor"
               fill="none"
@@ -157,8 +165,8 @@ const Works = () => {
             </svg>
             <svg
               className="arrow-right"
-              onClick={() => scrollToImage('next')}
               viewBox="0 0 24 24"
+              onClick={() => scrollToImage('next')}
               strokeWidth="2"
               stroke="currentColor"
               fill="none"
@@ -171,7 +179,71 @@ const Works = () => {
           </div>
        
       </div>
-
+                   
+      <div id="secondModal" className="modalTwo">
+            <div className="container-kitchen-works">
+        <ul ref={sectionRef} className="kitchen-works-section">
+          {bedroomImages.map((image) => (
+                
+            <li className="container-img-kitchens" key={image.id}>
+              <img
+                className="img-kitchens"
+                src={image.imgSrc}
+                alt=""
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+       
+          <span className="close-btn" onClick={closeSecondModal}>
+          <svg className='toclose-icon' 
+                     
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    stroke="currentColor" 
+                    fill="none" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round">
+                    <path stroke="none" 
+                    d="M0 0h24v24H0z" 
+                    fill="none"/>
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+          </span>
+          <div className="image-control-modal">
+            <svg
+              className="arrow-left"
+              viewBox="0 0 24 24"
+              onClick={() => scrollToImage('prev')}
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 6l-6 6l6 6" />
+            </svg>
+            <svg
+              className="arrow-right"
+              viewBox="0 0 24 24"
+              onClick={() => scrollToImage('next')}
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6l6 6l-6 6" />
+            </svg>
+          </div>
+       
+      </div>
         </>
     )
 }

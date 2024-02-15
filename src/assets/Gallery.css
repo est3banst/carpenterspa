@@ -1,5 +1,5 @@
 
-.modal {
+.modal, .modalTwo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,47 +22,45 @@
     cursor: pointer;
 }
 .container-kitchen-works {
-    width: 100%;
+    max-width: 700px;
+    max-height: 500px;
     height: 100%;
-    margin: auto;
-    position: inherit;
+    padding: 1rem;
+    overflow: hidden;
+    
 }
-
+/* UL */
 .kitchen-works-section {
     list-style: none;
-    padding: 20px 0 20px;
     white-space: nowrap;
-    width: 100%;
-    height: 100vh;
     box-sizing: border-box;
-    display: flex;
 }
-
-.container-img-kitchens {
-    display: flex;
+/* LI */
+.container-img-kitchens {    
     line-height: 0;
-    height: auto;
-    position: fixed;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    display: inline;
+    padding: 1rem;
+    
+    border-radius: 8px;
+    
 }
 
 
-.modal img {
-    max-width: 650px;
-    width: 100%;
-    position: relative;
-    padding: 10px;
+.modal img, .modalTwo img {
+    max-width: 750px;
     cursor: pointer;
-    aspect-ratio: 5 / 4;
-    border-radius: 8px;
+    aspect-ratio: 8 / 5;
 }
 
 @media only screen and (1024px > width) {
-    .modal img {
-        margin: 4rem auto;
+    .modal img, .modalTwo img {
+        margin: auto;
+        padding: 0;
+        width: 120%;
+        height: 50vh;
+        aspect-ratio: 9 / 7;
     }
+   
 }
 
 

@@ -1,6 +1,7 @@
 :root {
     --backgroundcolor:#bcb2a580 ;
     --greencolor: #458147;
+    box-sizing: border-box;
 }
 
 body {
