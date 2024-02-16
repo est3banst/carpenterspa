@@ -11,55 +11,45 @@ import '../assets/Work.css'
 const Works = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const sectionRef = useRef();
- 
+    const kitRef = useRef();
+    const bedRef = useRef();
 
+  
     useEffect(() => {
-        const sectionNode = sectionRef.current;
-        const imgNodes = sectionNode.querySelectorAll("li > img")[currentIndex];
-        
-        if (imgNodes) {
-            imgNodes.scrollIntoView({
-                behavior: 'smooth'
+        const kitNode = kitRef.current;
+        const imgKitNodes = kitNode.querySelectorAll("li > img")[currentIndex];
+        if (imgKitNodes) {
+            imgKitNodes.scrollIntoView({
+                behavior: 'auto'
             });
         }
-    },[currentIndex]);
+      
+    },[currentIndex]); 
+  
 
     const scrollToImage = (direction) => {
         if (direction === 'prev') {
             setCurrentIndex(curr => {
                 const isFirstImg = currentIndex === 0;
-                return isFirstImg ? 0 : curr - 1;
+                return isFirstImg ? kitchenImages.length - 1 : curr - 1;
             })
         } else {
             const isLastImg = currentIndex === kitchenImages.length -1;
             if (!isLastImg) {
                 setCurrentIndex(curr => curr + 1);
-            }
+            } else { setCurrentIndex(currentIndex - kitchenImages.length -1)}
         }
     }
   
 
-    const openModal = () => {
-        const modal = document.getElementById('myModal');
-        modal.style.visibility = 'visible';
+    const openModal = (el) => {
+        el.style.visibility = 'visible';
+      
       };
     
-      const closeModal = () => {
-        const modal = document.getElementById('myModal');
-        modal.style.visibility = 'hidden';
+      const closeModal = (el) => {
+        el.style.visibility = 'hidden';
       };
-      const openSecondModal = () => {
-        const modal = document.getElementById('secondModal');
-        modal.style.visibility = 'visible';
-      };
-    
-      const closeSecondModal = () => {
-        const modal = document.getElementById('secondModal');
-        modal.style.visibility = 'hidden';
-      };
-    
-
 
     return (
         <>
@@ -72,7 +62,7 @@ const Works = () => {
             <div className='container-choice'>
            
             <section className='container-choice'>
-                <button onClick={openModal}>
+                <button onClick={() => openModal(document.getElementById('myModal'))}>
                 <svg className='choice-selection' 
                     width="24" 
                     height="24" 
@@ -93,7 +83,7 @@ const Works = () => {
                 <img src="/imgs/cocina/kitchenchoice.jpg" alt="" />
             </section>
             <section className='container-choice'>
-                <button onClick={openSecondModal}> 
+                <button onClick={() => openModal(document.getElementById('secondModal'))}> 
                 <svg className='choice-selection' 
                     width="24" 
                     height="24" 
@@ -117,7 +107,7 @@ const Works = () => {
            
             <div id="myModal" className="modal">
             <div className="container-kitchen-works">
-        <ul ref={sectionRef} className="kitchen-works-section">
+        <ul ref={kitRef} className="kitchen-works-section">
           {kitchenImages.map((image) => (
                 
             <li className="container-img-kitchens" key={image.id}>
@@ -131,7 +121,7 @@ const Works = () => {
         </ul>
       </div>
        
-          <span className="close-btn" onClick={closeModal}>
+          <span className="close-btn" onClick={() => closeModal(document.getElementById('myModal'))}>
           <svg className='toclose-icon' 
                      
                     width="24" 
@@ -182,7 +172,7 @@ const Works = () => {
                    
       <div id="secondModal" className="modalTwo">
             <div className="container-kitchen-works">
-        <ul ref={sectionRef} className="kitchen-works-section">
+        <ul ref={bedRef} className="kitchen-works-section">
           {bedroomImages.map((image) => (
                 
             <li className="container-img-kitchens" key={image.id}>
@@ -196,7 +186,7 @@ const Works = () => {
         </ul>
       </div>
        
-          <span className="close-btn" onClick={closeSecondModal}>
+          <span className="close-btn" onClick={() => closeModal(document.getElementById('secondModal'))}>
           <svg className='toclose-icon' 
                      
                     width="24" 
@@ -218,7 +208,6 @@ const Works = () => {
             <svg
               className="arrow-left"
               viewBox="0 0 24 24"
-              onClick={() => scrollToImage('prev')}
               strokeWidth="2"
               stroke="currentColor"
               fill="none"
@@ -231,7 +220,6 @@ const Works = () => {
             <svg
               className="arrow-right"
               viewBox="0 0 24 24"
-              onClick={() => scrollToImage('next')}
               strokeWidth="2"
               stroke="currentColor"
               fill="none"
