@@ -1,56 +1,40 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import {kitchenImages, bedroomImages} from './pictures'
-
+import { useScrollIntoView } from './hooks/useScrollIntoView';
 
 import '../assets/Gallery.css'
 import '../assets/Work.css'
 
 
 
-
 const Works = () => {
 
+    
     const [currentIndex, setCurrentIndex] = useState(0);
-    const kitRef = useRef();
+    
     const bedRef = useRef();
-
-  
-    useEffect(() => {
-        const kitNode = kitRef.current;
-        const imgKitNodes = kitNode.querySelectorAll("li > img")[currentIndex];
-        if (imgKitNodes) {
-            imgKitNodes.scrollIntoView({
-                behavior: 'auto'
-            });
-        }
-      
-    },[currentIndex]); 
-  
+    const kitRef = useRef();
+    
+    useScrollIntoView(kitRef, currentIndex);
+    useScrollIntoView(bedRef, currentIndex);
 
     const scrollToImage = (direction) => {
-        if (direction === 'prev') {
-            setCurrentIndex(curr => {
-                const isFirstImg = currentIndex === 0;
-                return isFirstImg ? kitchenImages.length - 1 : curr - 1;
-            })
-        } else {
-            const isLastImg = currentIndex === kitchenImages.length -1;
-            if (!isLastImg) {
-                setCurrentIndex(curr => curr + 1);
-            } else { setCurrentIndex(currentIndex - kitchenImages.length -1)}
-        }
-    }
-  
+      if (direction === 'prev') {
+          setCurrentIndex(curr => {
+              const isFirstImg = currentIndex === 0;
+              return isFirstImg ? kitchenImages.length - 1 : curr - 1;
+          })
+      } else {
+          const isLastImg = currentIndex === kitchenImages.length -1;
+          if (!isLastImg) {
+              setCurrentIndex(curr => curr + 1);
+          } else { setCurrentIndex(currentIndex - kitchenImages.length -1)}
+      }};
 
-    const openModal = (el) => {
-        el.style.visibility = 'visible';
-      
-      };
+    const openModal = (el) => el.style.visibility = 'visible';
     
-      const closeModal = (el) => {
-        el.style.visibility = 'hidden';
-      };
-
+    const closeModal = (el) => el.style.visibility = 'hidden';
+  
     return (
         <>
             <section className='container-works'>
@@ -206,6 +190,7 @@ const Works = () => {
           </span>
           <div className="image-control-modal">
             <svg
+              onClick={() => scrollToImage('prev')}
               className="arrow-left"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -218,6 +203,7 @@ const Works = () => {
               <path d="M15 6l-6 6l6 6" />
             </svg>
             <svg
+              onClick={() => scrollToImage('next')}
               className="arrow-right"
               viewBox="0 0 24 24"
               strokeWidth="2"

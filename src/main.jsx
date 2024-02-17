@@ -4,7 +4,6 @@ import App from './App.jsx';
 import { 
  BrowserRouter as Router, Route
  } from 'react-router-dom';
-import ErrorPag from './componentes/ErrorPag.jsx';
 import Articles from './componentes/Articles.jsx';
 import Works from './componentes/Works.jsx';
 import Contact from './componentes/Contact.jsx';

@@ -10,7 +10,7 @@ export default function Footer () {
        const handleScroll = () => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         setShowBttn(scrollTop > 20);
-    };
+    }
         window.addEventListener('scroll', handleScroll);
 
         return () => {

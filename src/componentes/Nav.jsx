@@ -2,17 +2,17 @@ import { useState } from 'react'
 import '../assets/App.css'
 
 
-
 export default function Nav () {
 
+    
     const [isSideNav, setSideNav] = useState(false);
     const menuResp = isSideNav ? 'open' : '';
     const sideNavUlClass = isSideNav ? 'sidenav-ul-visible' : 'sidenav-ul'
     const settingSideNav = () => {
         setSideNav(!isSideNav);
     }
-   
-    return (
+
+    return ( 
         <>
         <header className='header-comp'>
             
@@ -89,7 +89,8 @@ export default function Nav () {
            
         </header>
         
-         <ul className={sideNavUlClass}>
+          <ul id="responsive-ul" className={sideNavUlClass}>
+         
              <a className='sidenav-a' href='#' onClick={settingSideNav}>
              <li className='sidenav-li'>INICIO</li>
              <span className="material-symbols-outlined">
@@ -114,6 +115,7 @@ export default function Nav () {
              phone_callback
              </span>
              </a>
+            
          </ul>
     </>
     )
