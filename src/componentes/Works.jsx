@@ -187,6 +187,18 @@ const Works = () => {
           ))}
         </ul>
       </div>
+      <div className="container-points">
+              {
+                bedroomImages.map((_, ind) =>(
+                  <div key={ind}
+                  className={`points-container-item ${ind === currentIndex ? "active" : ""}`}
+                  onClick={() => goToSlide(ind)}>
+                  &#9865;
+
+                  </div>
+                ))
+              }
+            </div>
        
           <span className="close-btn" onClick={() => closeModal(document.getElementById('secondModal'))}>
           <svg className='toclose-icon' 
