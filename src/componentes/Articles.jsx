@@ -3,7 +3,7 @@ import '../assets/Estilo.css'
 export default function Articles () {
     return (
         <div id='about' className='container-about'>
-            <h2 className='header-about'>Nosotros</h2>
+            <h2 className='header-about'>Qué hacemos</h2>
             <article>
             <p className='par-about'>Diseño y ensamblaje de mobiliario tradicional</p>
             <p className='par-about'> Mobiliario fabricado acorde a tus necesidades y tu espacio,

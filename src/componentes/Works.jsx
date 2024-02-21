@@ -20,24 +20,29 @@ const Works = () => {
 
     const scrollToImage = (direction) => {
       if (direction === 'prev') {
-          setCurrentIndex(curr => {
+          setCurrentIndex(current => {
               const isFirstImg = currentIndex === 0;
-              return isFirstImg ? kitchenImages.length - 1 : curr - 1;
+              return isFirstImg ? kitchenImages.length - 1 : current - 1;
           })
       } else {
           const isLastImg = currentIndex === kitchenImages.length -1;
           if (!isLastImg) {
-              setCurrentIndex(curr => curr + 1);
-          } else { setCurrentIndex(currentIndex - kitchenImages.length -1)}
+              setCurrentIndex(current => current + 1);
+          } else {
+            setCurrentIndex(currentIndex - (kitchenImages.length - 1))
+          } 
       }};
 
+    const goToSlide = (slideIndex) => {
+      setCurrentIndex(slideIndex)
+    }
     const openModal = (el) => el.style.visibility = 'visible';
     
     const closeModal = (el) => el.style.visibility = 'hidden';
   
     return (
         <>
-            <section className='container-works'>
+            <section className='container-works' id='trabajos'>
             <h2 className='works-heading'>Algunos de nuestros trabajos</h2>
                 <p className='para-works'>Cada proyecto se concibe en el diálogo con nuestros clientes al
                     interpretar correctamente la necesidad y trabajar correctamente con los espacios.</p>
@@ -104,7 +109,19 @@ const Works = () => {
           ))}
         </ul>
       </div>
-       
+      <div className="container-points">
+              {
+                kitchenImages.map((_, ind) =>(
+                  <div key={ind}
+                  className={`points-container-item ${ind === currentIndex ? "active" : ""}`}
+                  onClick={() => goToSlide(ind)}>
+                  &#9865;
+
+                  </div>
+                ))
+              }
+            </div>
+      
           <span className="close-btn" onClick={() => closeModal(document.getElementById('myModal'))}>
           <svg className='toclose-icon' 
                      
@@ -150,6 +167,7 @@ const Works = () => {
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 6l6 6l-6 6" />
             </svg>
+
           </div>
        
       </div>
@@ -215,8 +233,9 @@ const Works = () => {
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 6l6 6l-6 6" />
             </svg>
+
           </div>
-       
+          
       </div>
         </>
     )

@@ -192,9 +192,12 @@ a {
         margin: auto 0;
         
     }
+    .call-icon:hover {
+        transform: scale(1.1032);
+    }
     .call-icon svg {
         transform: rotate(-90deg);
-        border: 3px solid #458147;
+        border: 1px solid #458147;
         border-radius: 45%;
         padding: .6rem;
         animation: calltoday 3s ease-in-out 2s infinite alternate-reverse;
@@ -287,6 +290,7 @@ a {
         margin:auto 0;
         width: 45px;
     }
+   
     .contact-today-icon {
         justify-content: center;
 
@@ -304,20 +308,23 @@ a {
     0% {
         transform: rotate(-90);
     }
-    20% {
-        transform: rotate(-94deg);
-    }
     40% {
+        transform: rotate(-94deg);
+
+    }
+    50% {
         transform: rotate(-89deg);
     }
     60% {
         transform: rotate(-95deg);
+        
     }
     80% {
         transform: rotate(-88deg);
     }
     100% {
         transform: rotate(-96deg);
+        
     }
     
 }

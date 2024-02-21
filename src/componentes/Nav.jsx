@@ -1,16 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../assets/App.css'
 
 
 export default function Nav () {
 
-    
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isSideNav, setSideNav] = useState(false);
     const menuResp = isSideNav ? 'open' : '';
     const sideNavUlClass = isSideNav ? 'sidenav-ul-visible' : 'sidenav-ul'
     const settingSideNav = () => {
         setSideNav(!isSideNav);
     }
+    
+    useEffect(()=>{
+        const handleResize = () =>{ setWindowWidth(window.innerWidth) }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    },[])
+
+    useEffect(()=> {
+        if(windowWidth > 1159) {
+            setSideNav(false);
+        }
+    }, [windowWidth])
 
     return ( 
         <>

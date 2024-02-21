@@ -92,3 +92,29 @@
     padding: .7rem;
     color: #fff;
 }
+
+.container-points {
+    color: #5e805f;
+    z-index: 500;
+    display: flex;
+    position: absolute;
+    bottom: 55px;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+}
+.points-container-item {
+    margin: .3rem .5rem;
+    height: 15px;
+    width: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.points-container-item.active {
+    width: 17px;
+    height: 17px;
+    /* border-radius: 50%; */
+    background: #5e805f;
+}
